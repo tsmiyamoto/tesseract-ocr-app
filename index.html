@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tesseract.js 日本語OCRデモ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.js" integrity="sha512-nz0x1oyyC4ySZ5yUNoaJfmZL5m74uYZPzG1vQci6wCywAgbb2bDVG4ySoQgAX7ulXO6cBWjDyVlSXed/oM0sWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.worker.min.js" integrity="sha512-tI8XgCFdjFaFps44mS1HaXdZ9GA8S64MTvUwfDNMtE2z0pENmsMZXhO4WY9KlsqImc0g8XdNWw0J9a5tw0VQuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js" integrity="sha384-FTcmq/2qF3iVphY7pgwHajYCDl1Tzp9xS28oL4XtIHL5n1me6XiAGHqUbfZJbhW7" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Tesseract.js 日本語OCRデモ</h1>
+      <p>日本語の画像またはPDFをアップロードするとテキストを抽出します。</p>
+    </header>
+
+    <main>
+      <section class="uploader">
+        <label for="file-input" class="file-label">
+          ファイルを選択（画像 / PDF）
+        </label>
+        <input id="file-input" type="file" accept="image/*,application/pdf" />
+        <button id="clear-button" type="button">リセット</button>
+      </section>
+
+      <section class="status">
+        <h2>進捗</h2>
+        <div id="progress" class="progress">ファイルを選択してください。</div>
+      </section>
+
+      <section class="results">
+        <h2>OCR結果</h2>
+        <div id="results"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        ブラウザ上で処理が完結します。ファイルはサーバーに送信されません。
+      </p>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

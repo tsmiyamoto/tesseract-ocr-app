@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light dark;
+  font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  --primary: #1f6feb;
+  --background: #f6f8fa;
+  --surface: #ffffff;
+  --border: #d0d7de;
+  --text: #24292f;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(31, 111, 235, 0.05);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+main {
+  width: min(960px, 90vw);
+  margin: 2rem auto 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+
+.uploader,
+.status,
+.results {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(31, 111, 235, 0.08);
+}
+
+.file-label {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease;
+}
+
+.file-label:hover {
+  background: #1158c7;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+#clear-button {
+  margin-left: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#clear-button:hover {
+  background: rgba(31, 111, 235, 0.1);
+  color: var(--primary);
+}
+
+.progress {
+  min-height: 2.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: rgba(31, 111, 235, 0.08);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.result-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+
+.result-item:last-of-type {
+  border-bottom: none;
+}
+
+.result-item h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.result-item pre {
+  margin: 0;
+  background: rgba(31, 111, 235, 0.08);
+  padding: 0.75rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 1.5rem auto 3rem;
+    gap: 1.5rem;
+  }
+
+  .file-label,
+  #clear-button {
+    width: 100%;
+    margin: 0 0 0.75rem;
+    text-align: center;
+  }
+
+  #clear-button {
+    margin-bottom: 0;
+  }
+}
